@@ -10,7 +10,7 @@ deploy:
   local_dir: dpl_cd_upload
   skip_cleanup: false
   on: &2
-    repo: demeilliez/aws
+    repo: demeilliez/aws2
   bucket: cedric-test-compartiment
   upload_dir: latest
 - provider: codedeploy
