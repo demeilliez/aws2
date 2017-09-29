@@ -2,6 +2,17 @@ language: php
 php:
   - '7.0'
 deploy:
+- provider: s3
+  region: eu-west-1
+  access_key_id: AKIAJ7WJ4TT32DNLV5GQ
+  secret_access_key: &1
+    secure: 0ZjqG7AQTQfV7h1sWeelD++XcVbD0K8zXk6W8aeGVLCwoctHSJOUS+wnxQN0OVC6QEXFkJFWF+C9i+d8BRm3MRQx4kdtsY3x/giLtfNVaM3ax0vNOnxSsYmAIOiaE3inBU47rjN659x5eL3Ilwdi6UdMoAZAxZrRuN1u1grdFWw3EO7Zgnz+X45XRAcw9KVFRFW60kboCkLXd7J1HqSACZEwwL5hat6Jr0dufK9wnXz/+cx9ijOTMaGUhEkCg1Zdn9wK+y3UB/9VxqQDOhWcAg+r48AWd39fLoLA2epVSXBMhtXlCqRg95rgRUMHlbNCuvskpvIgvCxA3n7EkstNB3RHUyClU9d7L3QKRv3gZw4uVuiHTmmVuAOyqmj/X19j393Twg68OGeWBZG0e4yOE7hHgVA1KUakXvaOpDX6S30qF3Z4n4vZNQoIHxvYDHdTPhvp3oTqu5qeBHgtI0jtdsG3TP2yEVpBY6ohvV0AWxOqN/XvJMBb5od6cIoht9AV+stzKeMkSPZyietQLmlfdZ4G+pgBbqdDE4Tw2AnE2w+no6Mm4cv+EW7pVezxu0fEy79GoWW1iBYmnv+/k7ffkELyB8CRVKttneOCR/j/6uXt1V8RO48x3jujnboui/pucRbRvfT2gf655yGoFVp8HvSP3KnK8fATnkbhzkjysIM=
+  local_dir: dpl_cd_upload
+  skip_cleanup: true
+  on: &2
+    repo: demeilliez/aws2
+  bucket: cedric-test-compartiment
+  upload_dir: latest
 - provider: codedeploy
   region: eu-west-1
   access_key_id: AKIAJ7WJ4TT32DNLV5GQ
